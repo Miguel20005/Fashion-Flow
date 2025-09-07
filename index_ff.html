@@ -3,70 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="app_ff.js"></script>
-    <link rel="stylesheet" href="style_ff.css">
-    <title>Fashion Flow</title>
+    <title>Fashion Flow - Tu tienda de Ropa Online</title>
+    <link rel="stylesheet" href="styles.css">
+    <!--Librería de Iconos Font Awesome-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <div class="header_promo">!Envio gratuito en todos los 
-        pedidos superiores a 20.000clp! Solo por tiempo limitado.</div>
-    <div class="header">
-    <h2>Fashion Flow</h2>
-        <form action="index2.html" method="get">
-            <input type="text">
-            <button type="submit">Buscar</button>
-        </form>
-        <!-- Barra -->
-        <a href="index_ff.html">Home</a>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <a href="index_ff.html">Categoria</a>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <a href="index_ff.html">Ofertas</a>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <a href="index_ff.html">Ropa de Mujer</a>    
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <a href="index_ff.html">Ropa de Hombre</a>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <a href="index_ff.html">Niños</a>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <a href="index_ff.html">Contact</a>            
-        <!-- Fin Barra -->
-    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-tshirt"></i></h1>
+            </div>
+            <nav class="nav">
+                <a href="#inicio">Inicio</a>
+                <a href="#productos">Productos</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </div>
+        </div>
+    </header>
+    <!--Fin Header-->
+
+    <!-- Hero Section -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h2>Nueva Colección 2024</h2>
+            <p>Descubre las últimas tendencias en moda</p>
+            <button class="cta-button" onclick="scrollToProducts()">Ver Productos</button>
+        </div>
+        <div class="hero-image">
+            <div class="hero-placeholder">
+                <i class="fas fa-user-tie fa-5x"></i>
+            </div>
+        </div>
+    </section>
+    <!-- Fin Hero Section -->
 
     <div class="cuadro_ppl1">
         <h1>Fashion Flow</h1>
         <h4> "Slogan"</h4>
     </div>
-    
-    <div class="cuadro_ppl2">
-        <table>
-            <tbody><tr>
-                <td>
-                    <img src="https://img.ltwebstatic.com/v4/j/pi/2025/07/23/2e/175327008025785cf0aa01cf207963009fa2022779_thumbnail_384x.webp" alt="" width="250" height="300">
-                </td>
-                <td>
-                    <img src="https://img.ltwebstatic.com/images3_pi/2024/01/11/80/17049551391f2ab6569d042105a7311c4775e64d5b_thumbnail_384x.webp" alt="" width="250" height="300">
-                </td>
-            
-                <td>
-                    <img src="https://img.ltwebstatic.com/images3_pi/2024/11/22/50/1732269866df0ce8ef32cbcdce5163cc49d311956f_thumbnail_384x.webp" alt="" width="250" height="300">
-                </td>
-            </tr>
-        </tbody></table>
 
+    <!-- Filtros de busqueda-->
+    <section class="filters">
+        <div class="container">
+            <h3>Filtrar por:</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">Todos</button>
+                <button class="filter-btn" data-category="camisas">Camisas</button>
+                <button class="filter-btn" data-category="pantalones">Pantalones</button>
+                <button class="filter-btn" data-category="zapatos">Zapatos</button>
+                <button class="filter-btn" data-category="accesorios">Accesorios</button>
+            </div>
+        </div>
+    </section>
+     <!-- Fin Filtros de busqueda -->
+
+    <!-- Productos -->
+    <section id="productos" class="products">
+        <div class="container">
+            <h2>Nuestros Productos</h2>
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán dinámicamente -->
+            </div>
+        </div>
+    </section>
+    <!--Fin Productos-->
+
+    <!-- Carrito Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Carrito de Compras</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total">
+                <h3>Total: $<span id="cartTotal">0</span></h3>
+            </div>
+            <div class="cart-actions">
+                <button class="btn-secondary" onclick="clearCart()">Vaciar Carrito</button>
+                <button class="btn-primary" onclick="checkout()">Finalizar Compra</button>
+            </div>
+        </div>
     </div>
+    <!-- Fin Carrito Modal -->
 
-    <div class="cuadro_ppl">
-
-        <h4>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto </h4>
-        <h4>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto </h4>
-    </div>
-
-<footer class="footer_style">
-    <p>© TODOS LOS DERECHOS RESERVADOS</p>
-    <p>Fashion Flow SPA. </p>
-    <p>Av. Presidente Riesco N°5.685, oficina 401, Santiago de Chile</p>
-</footer>
+    <!-- Footer -->
+    <footer id="contacto" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fashion Flow</h3>
+                    <p>Tu tienda de moda online favorita</p>
+                    <div class="social-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#productos">Productos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
+                    <p><i class="fas fa-envelope"></i> info@fashionflow.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Calle Fashion Flow St, Santiago, Chile</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Fin Footer -->
 
 </body>
 </html>
