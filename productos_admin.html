@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos — Administración | FashionFlow</title>
+  <link rel="stylesheet" href="style_admin.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">🧥</div><h2>FashionFlow</h2></div>
+    <nav class="menu">
+      <a href="menu_admin.html">🏠 Dashboard</a>
+      <a href="productos_admin.html" class="active">🧾 Productos</a>
+      <a href="usuario_admin.html">👥 Usuarios</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="page-header">
+      <h1>Productos</h1>
+      <span class="badge" id="badgeTotal">0 items</span>
+      <div class="spacer"></div>
+      <button id="btnNuevo" class="btn-primary">➕ Nuevo producto</button>
+    </header>
+
+    <!-- Herramientas -->
+    <div class="tools">
+      <input id="txtBuscar" type="text" placeholder="Buscar por código o nombre…" style="flex:1; padding:10px 12px; border:1px solid #e5e7eb; border-radius:10px;">
+      <select id="selCategoriaFiltro" class="btn-light">
+        <option value="">Todas las categorías</option>
+      </select>
+      <button id="btnReset" class="btn-light">Limpiar</button>
+    </div>
+
+    <!-- Tabla de productos -->
+    <section class="table-block">
+      <div class="table-head">
+        <h3>Listado</h3>
+        <button id="btnRefrescar" class="btn">Actualizar</button>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Img</th>
+              <th>Código</th>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Stock</th>
+              <th>Crítico</th>
+              <th>Categoría</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyProductos"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Formulario crear/editar -->
+    <section class="form-card" id="formWrapper" style="display:none;">
+      <h3 id="formTitulo">Nuevo producto</h3>
+      <p class="muted">Los campos marcados con * son obligatorios.</p>
+      <form id="formProducto" autocomplete="off">
+        <div class="form-grid">
+          <div>
+            <label for="codigo">Código * (min 3)</label>
+            <input id="codigo" type="text" minlength="3" required>
+          </div>
+          <div>
+            <label for="nombre">Nombre * (máx 100)</label>
+            <input id="nombre" type="text" maxlength="100" required>
+          </div>
+
+          <div class="full">
+            <label for="descripcion">Descripción (opcional, máx 500)</label>
+            <textarea id="descripcion" maxlength="500" placeholder="Breve descripción del producto…"></textarea>
+          </div>
+
+          <div>
+            <label for="precio">Precio * (>= 0, permite decimales)</label>
+            <input id="precio" type="number" min="0" step="0.01" required>
+          </div>
+          <div>
+            <label for="stock">Stock * (entero >= 0)</label>
+            <input id="stock" type="number" min="0" step="1" required>
+            <div id="msgStock" class="warning" style="display:none;">⚠️ Stock en nivel crítico.</div>
+          </div>
+
+          <div>
+            <label for="stockCritico">Stock crítico (opcional, entero >= 0)</label>
+            <input id="stockCritico" type="number" min="0" step="1">
+          </div>
+          <div>
+            <label for="categoria">Categoría *</label>
+            <select id="categoria" required></select>
+          </div>
+
+          <div class="full">
+            <label for="imagenUrl">Imagen (URL opcional)</label>
+            <input id="imagenUrl" type="text" placeholder="https://…">
+            <small class="muted">Si no ingresas imagen, se mostrará un placeholder.</small>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:14px;">
+          <button type="submit" class="btn-primary" id="btnGuardar">Guardar</button>
+          <button type="button" class="btn-light" id="btnCancelar">Cancelar</button>
+        </div>
+        <input type="hidden" id="idxEdicion" value="">
+      </form>
+    </section>
+  </main>
+
+  <script src="storage_admin.js"></script>
+  <script src="productos_admin_js.js"></script>
+</body>
+</html>

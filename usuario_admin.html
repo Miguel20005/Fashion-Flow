@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Usuarios — Administración | FashionFlow</title>
+  <link rel="stylesheet" href="style_admin.css">
+
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand"><div class="logo">🧥</div><h2>FashionFlow</h2></div>
+    <nav class="menu">
+      <a href="menu_admin.html">🏠 Dashboard</a>
+      <a href="productos_admin.html">🧾 Productos</a>
+      <a href="usuario_admin.html" class="active">👥 Usuarios</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="page-header">
+      <h1>Usuarios</h1>
+      <span class="badge" id="badgeTotal">0 usuarios</span>
+      <div class="spacer"></div>
+      <button id="btnNuevo" class="btn-primary">➕ Nuevo usuario</button>
+    </header>
+
+    <div class="tools">
+      <input id="txtBuscar" type="text" placeholder="Buscar por RUN, nombre o correo…" style="flex:1; padding:10px 12px; border:1px solid #e5e7eb; border-radius:10px;">
+      <button id="btnReset" class="btn-light">Limpiar</button>
+    </div>
+
+    <section class="table-block">
+      <div class="table-head">
+        <h3>Listado</h3>
+        <button id="btnRefrescar" class="btn">Actualizar</button>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>RUN</th>
+              <th>Nombre</th>
+              <th>Apellidos</th>
+              <th>Correo</th>
+              <th>Fecha Nac.</th>
+              <th>Región</th>
+              <th>Comuna</th>
+              <th>Dirección</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyUsuarios"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="form-card" id="formWrapper" style="display:none;">
+      <h3 id="formTitulo">Nuevo usuario</h3>
+      <p class="muted">Los campos marcados con * son obligatorios.</p>
+
+      <form id="formUsuario" autocomplete="off">
+        <div class="form-grid">
+          <div>
+            <label for="run">RUN * (sin puntos ni guion, ej: <b>190110222</b>)</label>
+            <input id="run" type="text" minlength="7" maxlength="9" required placeholder="Ej: 190110222">
+            <div class="error-inline" id="errRun">RUN inválido.</div>
+          </div>
+
+          <div>
+            <label for="nombre">Nombre * (máx 50)</label>
+            <input id="nombre" type="text" maxlength="50" required>
+          </div>
+
+          <div>
+            <label for="apellidos">Apellidos * (máx 100)</label>
+            <input id="apellidos" type="text" maxlength="100" required>
+          </div>
+
+          <div>
+            <label for="correo">Correo * (solo @duoc.cl, @profesor.duoc.cl o @gmail.com)</label>
+            <input id="correo" type="text" maxlength="100" required placeholder="nombre@duoc.cl">
+            <div class="error-inline" id="errCorreo">Dominio no permitido.</div>
+          </div>
+
+          <div>
+            <label for="fechaNac">Fecha de nacimiento (opcional)</label>
+            <input id="fechaNac" type="date">
+          </div>
+
+          <div>
+            <label for="region">Región *</label>
+            <select id="region" required></select>
+          </div>
+
+          <div>
+            <label for="comuna">Comuna *</label>
+            <select id="comuna" required></select>
+          </div>
+
+          <div class="full">
+            <label for="direccion">Dirección * (máx 300)</label>
+            <textarea id="direccion" maxlength="300" required placeholder="Calle, número, depto…"></textarea>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:10px; margin-top:14px;">
+          <button type="submit" class="btn-primary">Guardar</button>
+          <button type="button" class="btn-light" id="btnCancelar">Cancelar</button>
+        </div>
+        <input type="hidden" id="idxEdicion" value="">
+      </form>
+      <p class="small" style="margin-top:8px;">Nota: el RUN se guarda <b>sin puntos ni guion</b> y en mayúscula (si el DV es K).</p>
+    </section>
+  </main>
+
+  <script src="storage_admin.js"></script>
+  <script src="usuario_admin_js.js"></script>
+</body>
+</html>
