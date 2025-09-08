@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fashion Flow — Administración</title>
+  <link rel="stylesheet" href="style_admin.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo">🧥</div>
+      <h2>FashionFlow</h2>
+    </div>
+
+    <nav class="menu">
+      <a href="menu_admin.html" class="active">🏠 Dashboard</a>
+      <a href="productos_admin.html">🧾 Productos</a>
+      <a href="usuario_admin.html">👥 Usuarios</a>
+    </nav>
+  </aside>
+
+  <main class="content">
+    <header class="page-header">
+      <h1>¡Hola Administrador!</h1>
+      <div class="spacer"></div>
+      <button class="notif" title="Notificaciones">🔔</button>
+    </header>
+
+    <!-- Tarjetas KPI -->
+    <section class="kpi-grid">
+      <article class="kpi-card">
+        <div class="kpi-icon">👕</div>
+        <div>
+          <p class="kpi-title">PRODUCTOS TOTALES</p>
+          <p class="kpi-value" id="kpiProductos">0</p>
+          <small class="kpi-sub">Activos en el catálogo</small>
+        </div>
+      </article>
+
+      <article class="kpi-card">
+        <div class="kpi-icon">📦</div>
+        <div>
+          <p class="kpi-title">PEDIDOS HOY</p>
+          <p class="kpi-value" id="kpiPedidosHoy">0</p>
+          <small class="kpi-sub">Nuevos pedidos recibidos</small>
+        </div>
+      </article>
+
+      <article class="kpi-card">
+        <div class="kpi-icon">👤</div>
+        <div>
+          <p class="kpi-title">USUARIOS REGISTRADOS</p>
+          <p class="kpi-value" id="kpiUsuarios">0</p>
+          <small class="kpi-sub">Clientes en la plataforma</small>
+        </div>
+      </article>
+
+      <article class="kpi-card">
+        <div class="kpi-icon">💰</div>
+        <div>
+          <p class="kpi-title">VENTAS DEL MES</p>
+          <p class="kpi-value" id="kpiVentasMes">$0</p>
+          <small class="kpi-sub">Ingresos generados</small>
+        </div>
+      </article>
+    </section>
+
+    <!-- Acciones rápidas -->
+    <h2 class="section-title">Acciones Rápidas</h2>
+    <section class="quick-grid">
+      <a class="quick-card" href="productos_admin.html">
+        <div class="qc-icon">➕</div>
+        <p class="qc-title">Agregar Producto</p>
+        <small>Añadir nuevo producto al catálogo</small>
+      </a>
+
+      <a class="quick-card" href="usuario_admin.html">
+        <div class="qc-icon">🧑‍💼</div>
+        <p class="qc-title">Gestionar Usuarios</p>
+        <small>Administrar cuentas de usuarios</small>
+      </a>
+
+    </section>
+
+    <!-- Tabla simple (opcional para mostrar últimos pedidos) -->
+    <section class="table-block">
+      <div class="table-head">
+        <h3>Últimos pedidos</h3>
+        <button id="btnRefrescar" class="btn">Actualizar</button>
+      </div>
+      <div class="table-wrap">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Fecha</th>
+              <th>Cliente</th>
+              <th>Estado</th>
+              <th>Monto</th>
+            </tr>
+          </thead>
+          <tbody id="tbodyPedidos">
+            <!-- Se pinta desde JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="storage_admin.js"></script>
+  <script src="menu_admin_js.js"></script>
+</body>
+</html>
