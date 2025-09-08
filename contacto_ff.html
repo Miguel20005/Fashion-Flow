@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Contacto: Fashion Flow - Tu Tienda de Ropa Online</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_contacto_ff.css">
+    <script src="script_contacto_ff.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-tshirt"></i> Fashion Flow</h1>
+            </div>
+            <nav class="nav">
+                <a href="index_ff.html" class="active">Inicio</a>
+                <a href="nosotros_ff.html">Nosotros</a>
+                <a href="IniciarSesion_ff.html">Iniciar Sesión</a>
+                <a href="registro_ff.html">Registro</a>
+                <a href="productos_ff.html">Productos</a>
+                <a href="contacto_ff.html">Contacto</a>
+            </nav>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Contacto</h1>
+            <p>Estamos aquí para ayudarte. Contáctanos y te responderemos lo antes posible.</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form">
+                    <h2><i class="fas fa-envelope"></i> Envíanos un Mensaje</h2>
+                    
+                    <div class="message success" id="successMessage">
+                        <i class="fas fa-check-circle"></i> ¡Mensaje enviado exitosamente! Te responderemos pronto.
+                    </div>
+                    
+                    <div class="message error" id="errorMessage">
+                        <i class="fas fa-exclamation-triangle"></i> Error al enviar el mensaje. Inténtalo nuevamente.
+                    </div>
+
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Nombre *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Apellido *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Teléfono</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Asunto *</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">Seleccionar asunto</option>
+                                    <option value="consulta-producto">Consulta sobre producto</option>
+                                    <option value="problema-pedido">Problema con pedido</option>
+                                    <option value="devolucion">Devolución o cambio</option>
+                                    <option value="sugerencia">Sugerencia</option>
+                                    <option value="otro">Otro</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Mensaje *</label>
+                            <textarea id="message" name="message" placeholder="Cuéntanos en qué podemos ayudarte..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i> Enviar Mensaje
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Dirección</h3>
+                        <p>
+                            123 Fashion Street<br>
+                            Nueva York, NY 10001<br>
+                            Estados Unidos
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Teléfono</h3>
+                        <p>
+                            <strong>Ventas:</strong> +1 (234) 567-8900<br>
+                            <strong>Soporte:</strong> +1 (234) 567-8901<br>
+                            <strong>WhatsApp:</strong> +1 (234) 567-8902
+                        </p>
+                    </div>
+
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>
+                            <strong>General:</strong> info@stylehub.com<br>
+                            <strong>Ventas:</strong> ventas@stylehub.com<br>
+                            <strong>Soporte:</strong> soporte@stylehub.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h2>Nuestra Ubicación</h2>
+            <p>Visítanos en nuestra tienda física o contáctanos online</p>
+            <div class="map-placeholder">
+                <i class="fas fa-map fa-4x"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <h2>Preguntas Frecuentes</h2>
+            
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cuáles son los métodos de pago disponibles?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    Aceptamos tarjetas de crédito y débito (Visa, MasterCard, American Express), PayPal, transferencias bancarias y pago en efectivo en nuestra tienda física.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cuánto tiempo tarda en llegar mi pedido?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    Los pedidos se entregan entre 2-5 días hábiles para envíos estándar y 1-2 días para envíos express. El envío es gratuito en compras superiores a $50.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Puedo devolver o cambiar un producto?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    Sí, tienes 30 días para devolver cualquier producto en perfecto estado con su etiqueta original. Los cambios por talla son gratuitos.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Ofrecen tallas especiales?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    Ofrecemos una amplia gama de tallas desde XS hasta 3XL en la mayoría de nuestros productos. Consulta la guía de tallas en cada producto.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    ¿Cómo puedo rastrear mi pedido?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="faq-answer">
+                    Una vez procesado tu pedido, recibirás un código de seguimiento por email que te permitirá rastrear tu paquete en tiempo real.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media -->
+    <section class="social-section">
+        <div class="container">
+            <h2>Síguenos en Redes Sociales</h2>
+            <p>Mantente al día con las últimas tendencias y ofertas exclusivas</p>
+            
+            <div class="social-icons">
+                <a href="#" class="social-icon facebook" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" class="social-icon instagram" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="social-icon twitter" title="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="#" class="social-icon whatsapp" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fashion Flow</h3>
+                    <p>Tu tienda de moda online favorita. Estilo, calidad y las últimas tendencias al alcance de un click.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index_ff.html">Inicio</a></li>
+                        <li><a href="nosotros_ff.html">Nosotros</a></li>
+                        <li><a href="productos_ff.html">Productos</a></li>
+                        <li><a href="contacto_ff.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +56 9 XXXX XXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@fashionflow.cl</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Fashion 123, Santiago</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

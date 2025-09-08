@@ -1,72 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="app_ff.js"></script>
+    <title> Home: Fashion Flow - Tu Tienda de Ropa Online</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_ff.css">
-    <title>Fashion Flow</title>
+    <script src="app_ff.js"></script>
 </head>
 <body>
-    <div class="header_promo">!Envio gratuito en todos los 
-        pedidos superiores a 20.000clp! Solo por tiempo limitado.</div>
-    <div class="header">
-    <h2>Fashion Flow</h2>
-        <form action="index2.html" method="get">
-            <input type="text">
-            <button type="submit">Buscar</button>
-        </form>
-        <!-- Barra -->
-        <a href="index_ff.html">Home</a>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <a href="index_ff.html">Categoria</a>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <a href="index_ff.html">Ofertas</a>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <a href="index_ff.html">Ropa de Mujer</a>    
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <a href="index_ff.html">Ropa de Hombre</a>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <a href="index_ff.html">Niños</a>
-        <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-        <a href="index_ff.html">Contact</a>            
-        <!-- Fin Barra -->
-    </div>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-tshirt"></i> Fashion Flow</h1>
+            </div>
+            <nav class="nav">
+                <a href="index_ff.html" class="active">Inicio</a>
+                <a href="nosotros_ff.html">Nosotros</a>
+                <a href="IniciarSesion_ff.html">Iniciar Sesión</a>
+                <a href="registro_ff.html">Registro</a>
+                <a href="productos_ff.html">Productos</a>
+                <a href="contacto_ff.html">Contacto</a>
+            </nav>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
 
-    <div class="cuadro_ppl1">
-        <h1>Fashion Flow</h1>
-        <h4> "Slogan"</h4>
-    </div>
-    
-    <div class="cuadro_ppl2">
-        <table>
-            <tbody><tr>
-                <td>
-                    <img src="https://img.ltwebstatic.com/v4/j/pi/2025/07/23/2e/175327008025785cf0aa01cf207963009fa2022779_thumbnail_384x.webp" alt="" width="250" height="300">
-                </td>
-                <td>
-                    <img src="https://img.ltwebstatic.com/images3_pi/2024/01/11/80/17049551391f2ab6569d042105a7311c4775e64d5b_thumbnail_384x.webp" alt="" width="250" height="300">
-                </td>
-            
-                <td>
-                    <img src="https://img.ltwebstatic.com/images3_pi/2024/11/22/50/1732269866df0ce8ef32cbcdce5163cc49d311956f_thumbnail_384x.webp" alt="" width="250" height="300">
-                </td>
-            </tr>
-        </tbody></table>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Nueva Colección 2024</h2>
+            <p>Descubre las últimas tendencias en moda con Fashion Flow. Calidad, estilo y comodidad en cada prenda.</p>
+            <a href="productos_ff.html" class="cta-button">Ver Productos</a>
+        </div>
+        <div class="hero-image">
+            <div class="hero-placeholder">
+                <i class="fas fa-user-tie fa-5x"></i>
+            </div>
+        </div>
+    </section>
 
-    </div>
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #333; font-size: 2.5rem;">¿Por qué elegir Fashion Flow?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Envío Gratis</h3>
+                    <p>Envío gratuito en compras mayores a $50. Recibe tus productos en 2-3 días hábiles.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Calidad Premium</h3>
+                    <p>Materiales de la más alta calidad seleccionados cuidadosamente para tu comodidad.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-undo"></i>
+                    <h3>Devolución Fácil</h3>
+                    <p>30 días para devolver cualquier producto que no te convenza completamente.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Soporte 24/7</h3>
+                    <p>Nuestro equipo está disponible para ayudarte en cualquier momento del día.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="cuadro_ppl">
-
-        <h4>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto </h4>
-        <h4>texto texto texto texto texto texto texto texto texto texto texto texto texto texto texto </h4>
-    </div>
-
-<footer class="footer_style">
-    <p>© TODOS LOS DERECHOS RESERVADOS</p>
-    <p>Fashion Flow SPA. </p>
-    <p>Av. Presidente Riesco N°5.685, oficina 401, Santiago de Chile</p>
-</footer>
+    <!--Inicio Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Fashion Flow</h3>
+                    <p>Tu tienda de moda online favorita. Estilo, calidad y las últimas tendencias al alcance de un click.</p>
+                    <div class="social-icons">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-twitter"></i>
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="index_ff.html">Inicio</a></li>
+                        <li><a href="nosotros_ff.html">Nosotros</a></li>
+                        <li><a href="productos_ff.html">Productos</a></li>
+                        <li><a href="contacto_ff.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <p><i class="fas fa-phone"></i> +56 9 XXXX XXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@fashionflow.cl</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Fashion 123, Santiago</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
