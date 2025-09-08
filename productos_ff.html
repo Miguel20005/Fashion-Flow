@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos: Fashion Flow - Tu Tienda de Ropa Online</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style_productos_ff.css">
+    <script src="script_productos_ff.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-tshirt"></i>Fashion Flow</h1>
+            </div>
+            <nav class="nav">
+                <a href="index_ff.html" class="active">Inicio</a>
+                <a href="nosotros_ff.html">Nosotros</a>
+                <a href="IniciarSesion_ff.html">Iniciar Sesión</a>
+                <a href="registro_ff.html">Registro</a>
+                <a href="productos_ff.html">Productos</a>
+                <a href="contacto_ff.html">Contacto</a>
+            </nav>
+            <div class="cart-icon" onclick="openCart()">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count" id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Nuestros Productos</h1>
+            <p>Descubre nuestra colección completa de moda y encuentra tu estilo perfecto</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="filters">
+        <div class="container">
+            <div class="filter-controls">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">Todos</button>
+                    <button class="filter-btn" data-category="camisas">Camisas</button>
+                    <button class="filter-btn" data-category="pantalones">Pantalones</button>
+                    <button class="filter-btn" data-category="zapatos">Zapatos</button>
+                    <button class="filter-btn" data-category="accesorios">Accesorios</button>
+                </div>
+                
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Buscar productos..." onkeyup="buscarProductos()">
+                    <i class="fas fa-search" style="color: #667eea;"></i>
+                </div>
+                
+                <select class="sort-select" id="sortSelect" onchange="sortProducts()">
+                    <option value="name-asc">Nombre A-Z</option>
+                    <option value="name-desc">Nombre Z-A</option>
+                    <option value="price-asc">Precio: Menor a Mayor</option>
+                    <option value="price-desc">Precio: Mayor a Menor</option>
+                    <option value="rating-desc">Mejor Calificación</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products-section">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se cargarán dinámicamente -->
+            </div>
+            
+            <div class="no-results" id="noResults" style="display: none;">
+                <i class="fas fa-search"></i>
+                <h3>No se encontraron productos</h3>
+                <p>Intenta cambiar los filtros o términos de búsqueda</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal del Carrito -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarCarrito()">&times;</span>
+            <h2><i class="fas fa-shopping-cart"></i> Carrito de Compras</h2>
+            <div id="cartItems"></div>
+            <div class="cart-total" id="cartTotalSection" style="display: none;">
+                <h3>Total: $<span id="cartTotal">0</span></h3>
+            </div>
+            <div class="cart-actions" id="cartActions" style="display: none;">
+                <button class="btn-secondary" onclick="vaciarCarrito()">
+                    <i class="fas fa-trash"></i> Vaciar Carrito
+                </button>
+                <button class="btn-primary" onclick="checkout()">
+                    <i class="fas fa-credit-card"></i> Finalizar Compra
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

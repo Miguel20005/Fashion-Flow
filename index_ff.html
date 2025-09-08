@@ -1,13 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fashion Flow - Tu tienda de Ropa Online</title>
+    <title> Home: Fashion Flow - Tu Tienda de Ropa Online</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style_ff.css">
     <script src="app_ff.js"></script>
-    <!--Librería de Iconos Font Awesome-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Header -->
@@ -17,24 +16,26 @@
                 <h1><i class="fas fa-tshirt"></i> Fashion Flow</h1>
             </div>
             <nav class="nav">
-                <a href="#inicio">Inicio</a>
-                <a href="#productos">Productos</a>
-                <a href="#contacto">Contacto</a>
+                <a href="index_ff.html" class="active">Inicio</a>
+                <a href="nosotros_ff.html">Nosotros</a>
+                <a href="IniciarSesion_ff.html">Iniciar Sesión</a>
+                <a href="registro_ff.html">Registro</a>
+                <a href="productos_ff.html">Productos</a>
+                <a href="contacto_ff.html">Contacto</a>
             </nav>
             <div class="cart-icon">
                 <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
+                <span class="cart-count" id="cartCount">0</span>
             </div>
         </div>
     </header>
-    <!--Fin Header-->
 
     <!-- Hero Section -->
-    <section id="inicio" class="hero">
+    <section class="hero">
         <div class="hero-content">
             <h2>Nueva Colección 2024</h2>
-            <p>Descubre las últimas tendencias en moda</p>
-            <button class="cta-button" onclick="scrollToProducts()">Ver Productos</button>
+            <p>Descubre las últimas tendencias en moda con Fashion Flow. Calidad, estilo y comodidad en cada prenda.</p>
+            <a href="productos_ff.html" class="cta-button">Ver Productos</a>
         </div>
         <div class="hero-image">
             <div class="hero-placeholder">
@@ -42,84 +43,68 @@
             </div>
         </div>
     </section>
-    <!-- Fin Hero Section -->
-    
-    <!-- Filtros de busqueda-->
-    <section class="filters">
+
+    <!-- Features Section -->
+    <section class="features">
         <div class="container">
-            <h3>Filtrar por:</h3>
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-category="all">Todos</button>
-                <button class="filter-btn" data-category="camisas">Camisas</button>
-                <button class="filter-btn" data-category="pantalones">Pantalones</button>
-                <button class="filter-btn" data-category="zapatos">Zapatos</button>
-                <button class="filter-btn" data-category="accesorios">Accesorios</button>
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #333; font-size: 2.5rem;">¿Por qué elegir Fashion Flow?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-shipping-fast"></i>
+                    <h3>Envío Gratis</h3>
+                    <p>Envío gratuito en compras mayores a $50. Recibe tus productos en 2-3 días hábiles.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-medal"></i>
+                    <h3>Calidad Premium</h3>
+                    <p>Materiales de la más alta calidad seleccionados cuidadosamente para tu comodidad.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-undo"></i>
+                    <h3>Devolución Fácil</h3>
+                    <p>30 días para devolver cualquier producto que no te convenza completamente.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-headset"></i>
+                    <h3>Soporte 24/7</h3>
+                    <p>Nuestro equipo está disponible para ayudarte en cualquier momento del día.</p>
+                </div>
             </div>
         </div>
     </section>
-     <!-- Fin Filtros de busqueda -->
 
-    <!-- Productos -->
-    <section id="productos" class="products">
-        <div class="container">
-            <h2>Nuestros Productos</h2>
-            <div class="products-grid" id="productsGrid">
-                <!-- Los productos se cargarán dinámicamente -->
-            </div>
-        </div>
-    </section>
-    <!--Fin Productos-->
-
-    <!-- Carrito Modal -->
-    <div id="cartModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Carrito de Compras</h2>
-            <div id="cartItems"></div>
-            <div class="cart-total">
-                <h3>Total: $<span id="cartTotal">0</span></h3>
-            </div>
-            <div class="cart-actions">
-                <button class="btn-secondary" onclick="clearCart()">Vaciar Carrito</button>
-                <button class="btn-primary" onclick="checkout()">Finalizar Compra</button>
-            </div>
-        </div>
-    </div>
-    <!-- Fin Carrito Modal -->
-
-    <!-- Footer -->
-    <footer id="contacto" class="footer">
+    <!--Inicio Footer -->
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Fashion Flow</h3>
-                    <p>Tu tienda de moda online favorita</p>
+                    <p>Tu tienda de moda online favorita. Estilo, calidad y las últimas tendencias al alcance de un click.</p>
                     <div class="social-icons">
                         <i class="fab fa-facebook"></i>
                         <i class="fab fa-instagram"></i>
                         <i class="fab fa-twitter"></i>
+                        <i class="fab fa-tiktok"></i>
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Enlaces</h4>
+                    <h4>Enlaces Rápidos</h4>
                     <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#productos">Productos</a></li>
-                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="index_ff.html">Inicio</a></li>
+                        <li><a href="nosotros_ff.html">Nosotros</a></li>
+                        <li><a href="productos_ff.html">Productos</a></li>
+                        <li><a href="contacto_ff.html">Contacto</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>Contacto</h4>
-                    <p><i class="fas fa-phone"></i> +1 234 567 8900</p>
-                    <p><i class="fas fa-envelope"></i> info@fashionflow.com</p>
-                    <p><i class="fas fa-map-marker-alt"></i> 123 Calle Fashion Flow St, Santiago, Chile</p>
+                    <p><i class="fas fa-phone"></i> +56 9 XXXX XXXX</p>
+                    <p><i class="fas fa-envelope"></i> info@fashionflow.cl</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Av. Fashion 123, Santiago</p>
                 </div>
             </div>
         </div>
     </footer>
-    <!-- Fin Footer -->
 
-    
 </body>
 </html>
-
